@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
-const dburl=process.env.DATABASE_URI || 'mongodb://localhost:27017/Owner';
+const dburl=process.env.DATABASE_URI 
 mongoose.connect(dburl);
 const ownerSchema = new mongoose.Schema({
   name: {

@@ -50,4 +50,6 @@ input[type="file"] {
 .paragraph
 {
 color: red;
+font-size: 14.5px;
+display: inline-block;
 }
