@@ -1,20 +1,24 @@
-require("dotenv").config();  
+require("dotenv").config();  // Load environment variables from .env file
 const express = require("express");
 const path = require("path");
 const flash = require('connect-flash');
 const session = require('express-session');  
 const cookieParser = require('cookie-parser');
-const RedisStore = require('connect-redis')(session); 
+const connectRedis = require('connect-redis');  // Correct way to import connect-redis
+const RedisStore = connectRedis(session);  // Use it as a session store
 const ownerRoutes = require("./routes/owner-routes");
 const serviceRoutes = require("./routes/service-routes");
 const portRoutes = require("./routes/portfolio-routes");
 
 const app = express();
 
+// Middleware
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Session configuration using Redis
 app.use(session({
   store: new RedisStore({
     host: process.env.REDIS_HOST || 'localhost',  // Use environment variable for Redis host
