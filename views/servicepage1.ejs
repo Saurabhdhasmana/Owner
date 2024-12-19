@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Custom CSS (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/style5.css">
+</head>
+
+<body>
+    <%- include("sidebar") %>
+        <%- include("header") %>
+
+            <div class="container">
+                <table id="example" class="display">
+                    <thead>
+                        <tr>
+                            <th class="pen">Project Name</th>
+                            <th class="pen1">Team Members</th>
+                            <th class="pen2">Description</th>
+                            <th class="pen2">Features</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% service.reverse().forEach((user)=> { %>
+                            <!-- Project Name Row -->
+                            <tr>
+                                <td>
+                                    <%= user.name %>
+                                </td> <!-- Project name in first column -->
+
+                                <!-- Team Members (Images) in the second column -->
+                                <td>
+                                    <div class="ready">
+                                        <% user.images.reverse().forEach((user1)=> { %>
+
+                                            <div class="box">
+                                                <img src="/images/uploads/<%= user1 %>" alt="Team Member Image"
+                                                    height="50px" width="50px" class="img">
+                                            </div>
+                                            <% }) %>
+                                    </div>
+                                </td>
+
+
+                                <!-- Project Description in the third column -->
+                                <td>
+                                    <%= user.description %>
+                                </td> <!-- Project description in third column -->
+
+                                <td>
+                                    <div class="button-container">
+                                        <a href="/service"><button class="action-btn add-btn"><i
+                                                    class="fas fa-plus"></i>Add</button></a>
+                                        <a href="/service/edit/<%=user._id%>"><button class="action-btn edit-btn"><i
+                                                    class="fas fa-edit"></i>Edit</button></a>
+                                        <button class="action-btn delete-btn" onclick="confirmDelete('<%=user._id%>')"><i class="fas fa-trash-alt"></i>Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $('#example').DataTable();  // Initialize the table with DataTable functionality
+                });
+
+            function confirmDelete(userId) {
+              Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: '',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, redirect to delete route
+                    window.location.href = "/service/delete/" + userId;  // Make sure this is the correct URL for your deletion route
+                }
+            });
+        }
+            </script>
+</body>
+
+</html>

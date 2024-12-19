@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+      <%if(error.length>0){%>
+         <div class="color">
+          <%=error%>
+         </div>
+	   <%}%>
+	<div class="main-container">
+		<div class="container">
+			<form action="/owner/register" method="post">
+				<div class="part1">
+					<h1 class="top">Sign up</h1>
+					<label for="" class="menu1">Full Name</label>
+					<input type="text" name="name" class="id1" placeholder="Full Name">
+				</div>
+				<div class="part2">
+					<label for="" class="menu2">Email Address</label>
+					<input type="email" name="email" class="id2" placeholder="Email Address">
+				</div>
+
+				<div class="part3">
+					<label for="" class="menu3">Password</label>
+					<input type="password" name="password" class="id3" placeholder="Password">
+				</div>
+
+				<button type="submit" class="btn">Sign up</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

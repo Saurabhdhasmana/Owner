@@ -1,0 +1,89 @@
+*
+{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+.container 
+{
+    margin-left: 319px;
+    padding-top: 96px;  
+    width: calc(100% - 250px);
+    width: 100%;
+}
+table
+{
+width: 100%;
+    border-collapse: collapse; 
+}
+.box
+{
+height: 50px;
+width: 50px;
+overflow: hidden;
+}
+img
+{
+height: 50px;
+width: 50px;
+object-fit: cover;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center;  /* Vertically align buttons */
+    gap: 10px;  /* Adds spacing between buttons */
+}
+.action-btn {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 8px 15px; /* Controls button size with padding */
+}
+.action-btn i {
+    margin-right: 8px;
+}
+
+/* Add button */
+.add-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Edit button */
+.edit-btn {
+    background-color: #FFA500;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #e69500;
+    transform: scale(1.05);
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;  /* Adds border to table cells */
+}
+
+th {
+    background-color: #f4f4f4;  /* Light gray background for table headers */
+}

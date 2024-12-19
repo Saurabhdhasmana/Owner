@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="main-sidebar">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3 class="brand-text">Admin Panel</h3>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="menu-item">
+                        <a href="/service/servicepage">
+                            <i class="fas fa-cogs"></i> Service
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/portfolio/portfolio1">
+                            <i class="fas fa-briefcase"></i> Portfolio
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/users">
+                            <i class="fas fa-users"></i> Users
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/reports">
+                            <i class="fas fa-chart-line"></i> Reports
+                        </a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-cogs"></i> Settings
+                            <i class="fas fa-chevron-down submenu-toggle"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                            <li><a href="/preferences"><i class="fas fa-sliders-h"></i> Preferences</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/owner/logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- Main Content -->
+    </div>
+
+    <script>
+        // Add JS for submenu toggle functionality
+        document.querySelectorAll('.submenu-toggle').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenu = item.closest('li').querySelector('.submenu');
+                submenu.classList.toggle('active');
+            });
+        });
+
+        // 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+	<link rel="stylesheet" href="/stylesheets/style1.css">
+</head>
+
+<body>
+
+     <%if(error.length>0){%>
+         <div class="color">
+          <%=error%>
+         </div>
+	   <%}%>
+	<div class="login-container">
+		<p>Sign in to start your session</p>
+
+		<form action="/owner/login" method="POST">
+			<div class="form-group">
+				<input type="email" id="email" name="email" placeholder="Enter your email" required>
+			</div>
+			<div class="form-group">
+				<input type="password" id="password" name="password" placeholder="Enter your password" required>
+			</div>
+
+			<div class="box">
+				<input type="checkbox" class="box3">
+				<span class="box1">Remember</span>
+				<button class="box2">Sign In</button>
+			</div>
+			<p class="box4">-OR-</p>
+
+			<button class="btn btn1">Sign in using facebook</button>
+			<button class="btn btn2">Sign in using Google</button>
+
+			<a href="/render" class="car">Register for new membership</a>
+	</div>
+	</form>
+	</div>
+
+</body>
+
+</html>

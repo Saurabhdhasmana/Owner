@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Form - Admin Panel</title>
+
+    <!-- Bootstrap CSS (for form styling) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS (if needed) -->
+    <link rel="stylesheet" href="/stylesheets/style4.css">
+</head>
+
+<body>
+
+    <!-- Main Content -->
+    <%- include("sidebar") %>
+        <%- include("header") %>
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Card to hold the form -->
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h4><i class="fas fa-plus"></i> Add New Item</h4>
+                            </div>
+                            <div class="card-body">
+                                <!-- Form starts here -->
+                                <form action="/service" method="POST" enctype="multipart/form-data">
+                                    <!-- Item Name -->
+                                    <div class="form-group">
+                                        <label for="name">Item Name</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Enter item name" required>
+                                    </div>
+
+                                    <!-- Item Image Upload -->
+                                    <div class="form-group">
+                                        <label for="image">Upload Image</label>
+                                        <input type="file" class="form-control-file" id="image" name="image" 
+                                            accept="image/*" multiple required>
+                                    </div>
+                                    <!-- Item Description -->
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" id="description" name="description" rows="4"
+                                            placeholder="Enter item description" required></textarea>
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional JavaScript -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

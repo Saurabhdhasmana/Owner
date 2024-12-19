@@ -1,0 +1,155 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Wrapper for the entire page */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.main-sidebar {
+    width: 301px;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+        position: relative;
+    right: 51px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+}
+
+.menu-item a {
+    color: #c2c7d0;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border-bottom: 2px solid powderblue
+}
+
+.menu-item a:hover {
+    background-color: #495057;
+}
+
+.menu-item a i {
+    margin-right: 10px;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.submenu li a {
+    font-size: 16px;
+    padding: 8px 15px;
+}
+
+.submenu-toggle {
+    margin-left: auto;
+}
+
+/* Active submenu toggle */
+.submenu.active {
+    display: block;
+}
+
+.content-wrapper {
+      margin-left: 319px;
+    padding-top: 96px;
+    width: calc(100% - 250px);
+}
+
+.content-header h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.content-body {
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-sidebar {
+        width: 200px;
+    }
+
+    .content-wrapper {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar-menu {
+        display: block;
+    }
+
+    .submenu {
+        padding-left: 20px;
+    }
+}
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none;              /* Remove border */
+    color: white;              /* White text */
+     padding: 9px 28px;       /* Padding for size */
+    text-align: center;        /* Text centered */
+    text-decoration: none;     /* Remove underline */
+    display: inline-block;     /* Inline-block for flexibility */
+    font-size: 16px;           /* Font size */
+    margin: 4px 2px;           /* Margin for spacing */
+    cursor: pointer;          /* Pointer cursor on hover */
+    border-radius: 8px;        /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
